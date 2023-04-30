@@ -26,16 +26,16 @@ if st.button("Predict"):
     print(classification_report(naivebayes.predict(X_test_transformed), y_test))
     headline1 = ['Portugal crash out of FIFA World Cup 2022, Ronaldo in tears']
     vec = vector.transform(headline1).toarray()
-    print('Headline:', headline1)
-    print(str(list(naivebayes.predict(vec))[0]).replace('0', 'TECH').replace('1', 'BUSINESS').replace('2', 'SPORTS').replace('3','ENTERTAINMENT').replace('4','POLITICS'))
+    st.write('Headline:', headline1)
+    st.write(str(list(naivebayes.predict(vec))[0]).replace('0', 'TECH').replace('1', 'BUSINESS').replace('2', 'SPORTS').replace('3','ENTERTAINMENT').replace('4','POLITICS'))
     headline1 = ['There will be recession throughout the world as predicted by world bank']
     vec = vector.transform(headline1).toarray()
-    print('Headline:', headline1)
-    print(str(list(naivebayes.predict(vec))[0]).replace('0', 'TECH').replace('1', 'BUSINESS').replace('2', 'SPORTS').replace('3','ENTERTAINMENT').replace('4','POLITICS'))
+    st.write('Headline:', headline1)
+    st.write(str(list(naivebayes.predict(vec))[0]).replace('0', 'TECH').replace('1', 'BUSINESS').replace('2', 'SPORTS').replace('3','ENTERTAINMENT').replace('4','POLITICS'))
     import pickle
     saved_model = pickle.dumps(naivebayes)
     s = pickle.loads(saved_model)
     headline1 = ['There will be recession throughout the world as predicted by world bank']
     vec = vector.transform(headline1).toarray()
-    s.predict(vec)[0]
+    st.write(s.predict(vec)[0])
 
