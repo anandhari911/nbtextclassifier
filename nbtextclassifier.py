@@ -38,4 +38,4 @@ if st.button("Predict"):
     headline1 = ['There will be recession throughout the world as predicted by world bank']
     vec = vector.transform(headline1).toarray()
     st.write(s.predict(vec)[0])
-   !pip install pip install -U scikit-learn
+    !pip install pip install -U scikit-learn
